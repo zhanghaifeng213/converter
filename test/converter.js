@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 const converter = require('../app/converter');
 const request = require('request');
+const app = require('../app/server')
 
 describe("颜色转化器测试", function() {
     // 测试用例
@@ -25,6 +26,13 @@ describe("颜色转化器测试", function() {
 })
 
 describe("颜色转化器服务测试", function() {
+    let server;
+    before(function() {
+        server = app.listen(3000);
+    });
+    after(function() {
+        server.close();
+    });
     // 测试用例
 
     // 测试rgb转换到hex

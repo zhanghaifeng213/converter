@@ -16,6 +16,5 @@ app.get('/hexToRgb', function(req, res) {
     res.send(JSON.stringify(rgb));
 })
 
-app.listen(3000, () => {
-    console.log('listen: 3000');
-});
+module.exports = app;
+
